@@ -1,0 +1,57 @@
+
+:root {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --font-color: black;
+    --bkg-color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar {
+    border-right: 3px solid var(--font-color);
+    height: 100vh;
+    width: fit-content;
+    text-align: center;
+}
+
+#sidebar-logo {
+    width: 200px;
+    padding: 20px;
+}
+
+#sidebar h1, h2, h3, h4, span, textarea, button {
+    text-align: center;
+}
+
+#recent-conversions, #common-conversions {
+    justify-items: center;
+}
+.selector-button {
+    background-color: var(--bkg-color);
+    margin: 10px;
+    width: 190px;
+    text-align: left;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: block;
+}
+
+.active {
+    filter: brightness(90%);
+    border-radius: 15px;
+}
+
+.color-change {
+    filter: invert(100%);
+}
