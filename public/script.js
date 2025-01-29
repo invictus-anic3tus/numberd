@@ -147,7 +147,8 @@ function swapValues() {
 
     rightType.value = origLeftType;
     rightInput.value = origLeftInput;
-    rightArea.innerText = origLeftArea;
+    
+    updateConversion();
 
     updateUI(rightType);
     updateUI(leftType);

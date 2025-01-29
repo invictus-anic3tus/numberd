@@ -108,7 +108,7 @@ textarea {
     width: 100%;
     background-color: var(--bkg-color);
     transition-duration: 0.3s;
-    padding-left: 25px;
+    padding: 25px;
 }
 #main-header {
     text-align: center;
