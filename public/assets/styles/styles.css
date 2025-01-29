@@ -2,7 +2,9 @@
 :root {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     --font-color: black;
-    --bkg-color: white;
+    --bkg-color: rgb(255, 255, 255);
+    --sidebar-color: #f0f1ff;
+    --select-color: rgb(220, 220, 220);
 }
 
 body {
@@ -16,11 +18,23 @@ body {
     padding: 0;
 }
 
+h1, h2, h3, h4, h5, span, div, p, button {
+    color: var(--font-color);
+}
+
+textarea {
+    resize: none;
+}
+
+/********************* Sidebar *******************/
+
 #sidebar {
     border-right: 3px solid var(--font-color);
     height: 100vh;
     width: fit-content;
     text-align: center;
+    background-color: var(--sidebar-color);
+    transition-duration: 0.3s;
 }
 
 #sidebar-logo {
@@ -29,14 +43,18 @@ body {
 }
 
 #sidebar h1, h2, h3, h4, span, textarea, button {
-    text-align: center;
+    text-align: left;
+    margin-left: 40px;
+    width: fit-content;
+    border-bottom: 2px solid var(--font-color);
 }
 
 #recent-conversions, #common-conversions {
     justify-items: center;
 }
 .selector-button {
-    background-color: var(--bkg-color);
+    background-color: transparent;
+
     margin: 10px;
     width: 190px;
     text-align: left;
@@ -48,10 +66,161 @@ body {
 }
 
 .active {
-    filter: brightness(90%);
+    /* background-color: var(--select-color); */
     border-radius: 15px;
+    border: 2px solid var(--font-color);
+    padding: 13px;
 }
 
 .color-change {
     filter: invert(100%);
+}
+
+#bottom-sidebar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    justify-content: space-evenly;
+}
+
+#dark-light {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
+}
+#dark-light img {
+    padding: 0;
+    width: 48px;
+    height: 48px;
+}
+
+
+/************************ Main ****************************/
+
+#main {
+    width: 100%;
+    background-color: var(--bkg-color);
+    transition-duration: 0.3s;
+    padding-left: 25px;
+}
+#main-header {
+    text-align: center;
+    font-size: 4vw;
+}
+
+#conversion-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+#left {
+    width: 46%;
+    max-width: 400px;
+    padding: 0;
+    margin: 0;
+}
+
+#center {
+    align-content: center;
+    text-align: center;
+    margin: 20px;
+    width: 8%;
+}
+
+#swap {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+#right {
+    width: 46%;
+    max-width: 400px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.input-cont {
+    display: flex;
+    background-color: white;
+    width: 100%;
+    border-radius: 7px 7px 0px 0px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+.conv-input {
+    width: 25%;
+    margin: 0;
+    /* margin-left: -5px; */
+    padding: 1px;
+    padding-left: 10px;
+    border: 2px solid var(--font-color);
+    border-left: none;
+    background-color: white;
+    border-radius: 0px 7px 0px 0px;
+    font-size: 1.2em;
+
+    transition-duration: 0.3s;
+}
+
+.conv-type {
+    width: 75%;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 1px;
+    border: 2px solid var(--font-color);
+    border-radius: 7px 0px 0px 0px;
+    background-color: var(--sidebar-color);
+    color: var(--font-color);
+    font-size: 1.2em;
+    outline: none !important;
+
+    transition-duration: 0.3s;
+}
+
+.conv-type:focus {
+    outline: none;
+}
+
+.conv-text {
+    width: calc(100% - 24px);
+    height: 70px;
+    margin: 0;
+    border: 2px solid var(--font-color);
+    border-top: 0;
+    background-color: var(--bkg-color);
+    padding: 10px;
+    color: var(--font-color);
+    font-size: 1.4em;
+    padding-top: 10px;
+
+    transition-duration: 0.3s;
+}
+
+#right-text {
+    font-size: 1.2em;
+    word-break: break-all;
+    height: fit-content;
+    min-height: 70px;
+}
+
+
+/********************** Media Queries **********************/
+
+@media screen and (min-width: 1200px) {
+    #main-header {
+        font-size: 50px;
+    }
 }

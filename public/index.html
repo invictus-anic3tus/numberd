@@ -1,37 +1,87 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatable" content="ie=edge">
-        <title>Number'd</title>
-        <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
-        <link rel="stylesheet" href="./assets/styles/styles.css">
-    </head>
 
-    <body>
-        <script src="/src/script.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatable" content="ie=edge">
+    <title>Number'd</title>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+</head>
 
-        <div id="container">
-            <div id="sidebar">
-                <img src="/public/assets/number'd.svg" alt="Number'd" id="sidebar-logo" class="color-change">
+<body>
+    <script src="script.js" defer></script>
 
-                <h2>Common</h2>
+    <div id="container">
+        <div id="sidebar">
+            <img src="/public/assets/number'd.svg" alt="Number'd" id="sidebar-logo" class="color-change">
 
-                <div id="common-conversions">
-                    <button class="selector-button">Roman Numerals to Base 10</button>
-                    <button class="selector-button">Binary to Base 10</button>
-                </div>
-                
-                <h2>Recents</h2>
+            <h2>Common</h2>
 
-                <div id="recent-conversions">
-                    <button class="selector-button active">Base 10 to Base 5</button>
-                    <button class="selector-button">Roman Numerals to Base 8</button>
-                </div>
+            <div id="common-conversions">
+                <button class="selector-button" id="roman-b10" onclick="setValues('roman', '10', 'b', '10')">Roman Numerals to Base 10</button>
+                <button class="selector-button" id="b2-b10" onclick="setValues('b', '2', 'b', '10')">Binary to Base 10</button>
+                <button class="selector-button" id="greek-b10" onclick="setValues('greek', '10', 'b', '10')">Greek Numerals to Base 10</button>
             </div>
 
-            <div id="main"></div>
+            <!-- <h2>Recents</h2>
+
+                <div id="recent-conversions">
+                    <button class="selector-button">Base 10 to Base 5</button>
+                    <button class="selector-button">Roman Numerals to Base 8</button>
+                </div> -->
+
+            <div id="bottom-sidebar">
+                <button id="dark-light"><img src="./assets/dark.svg" alt="Dark/Light Mode"
+                        class="color-change"></button>
+                <a href="https://github.com/invictus-anic3tus/numberd"><img src="/public/assets/github.svg"
+                        alt="Github Page" class="color-change"></a>
+            </div>
         </div>
-    </body>
+
+        <div id="main">
+            <h1 id="main-header">Convert Numbers</h1>
+
+            <div id="conversion-container">
+                <div id="left">
+
+                    <div class="input-cont">
+
+                        <select name="type-left" id="type-left" class="conv-type">
+                            <option value="b">Base</option>
+                            <option value="roman">Roman Numerals</option>
+                            <option value="greek">Greek Numerals</option>
+                        </select>
+
+                        <input type="number" min="1" step="1"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="b-num-left"
+                            class="conv-input" value="10">
+
+                    </div>
+                    <textarea name="left-text" id="left-text" class="conv-text"></textarea>
+                </div>
+                <div id="center">
+                    <img src="/public/assets/swap.svg" alt="Swap" id="swap" class="color-change">
+                </div>
+                <div id="right">
+
+                    <div class="input-cont">
+                        <select name="type-right" id="type-right" class="conv-type">
+                            <option value="b">Base</option>
+                            <option value="roman">Roman Numerals</option>
+                            <option value="greek">Greek Numerals</option>
+                        </select>
+
+                        <input type="number" min="1" step="1"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="b-num-right"
+                            class="conv-input" value="10">
+                    </div>
+                    <div name="right-text" id="right-text" class="conv-text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
