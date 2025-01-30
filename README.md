@@ -6,11 +6,11 @@ This includes binary numbers, octals, hexadecimals, and more! Any number from 2-
 
 # Features:
 
-✅ - Roman Numerals ℹ️🇻
+✅ - Roman Numerals
 
-✅ - Binary Numbers 0️⃣1️⃣1️⃣0️⃣
+✅ - Binary Numbers
 
-✅ - Greek Numerals Ξπ
+✅ - Greek Numerals
 
 ✅ - Custom Base Numbers!!
 
