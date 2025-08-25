@@ -2,7 +2,7 @@
 
 Number'd is a simplistic, stylish, appealing website that allows you to seamlessly convert between all different types of number systems!
 It has the standard Roman Numerals and normal Base 10 counting system, but it also has Greek Numerals and customizable base values!
-This includes binary numbers, octals, hexadecimals, and more! Any number from 2-36, to be exact.
+This includes binary numbers, octals, hexadecimals, and more! Any base from 2-36, to be exact.
 
 # Features:
 
